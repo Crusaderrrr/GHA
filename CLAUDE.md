@@ -67,10 +67,10 @@ Each stage has a **Done when** line, and a stage is not finished until its crite
 
 ## Current state
 
-Bare scaffolds only:
-- `backend/`: Spring Initializr project (jdbc, restclient, webmvc, flyway, docker-compose, postgres, lombok). `compose.yaml` runs `postgres:18`. No migrations yet.
-- `frontend/`: the Vite React-TS template.
-- No git repo or CI yet.
+Stage 1 skeleton (no real logic yet, `TODO stage N` marks the gaps):
+- `backend/`: `V1__init.sql` (`import_hour` state table, `event` partitioned by `created_at`, no partitions yet), `importer/` (`GhArchiveClient`, `ImportService`, `POST /api/import?from&to`), `trends/` (`GET /api/trends`, `GET /api/repos/{owner}/{name}/history` returning empty lists). Tests start Postgres via `compose.yaml` (`spring.docker.compose.skip.in-tests=false`).
+- `frontend/`: react-router, trending page with filters, repo page, `src/api.ts` mirrors backend records. Vite proxies `/api` to `localhost:8080`.
+- `.github/workflows/ci.yml`: backend `mvnw verify` + frontend lint/build.
 
 ## Commands
 

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gha</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>gha</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

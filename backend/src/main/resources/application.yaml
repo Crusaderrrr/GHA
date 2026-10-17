@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: gha
+  # Datasource comes from compose.yaml via spring-boot-docker-compose.
+  docker:
+    compose:
+      lifecycle-management: start-only
+
+gha:
+  archive:
+    base-url: https://data.gharchive.org
